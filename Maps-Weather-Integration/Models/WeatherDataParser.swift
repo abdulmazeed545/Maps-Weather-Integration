@@ -13,10 +13,10 @@ struct WeatherDataParser {
     static var shared = WeatherDataParser()
     
     //Creating a function to to forecast the weather data by using city names
-    func weatherForecast(completion: @escaping (WeatherModel) -> Void){
+    func weatherForecast(urlString:String, completion: @escaping (WeatherModel) -> Void){
         
         //Creating a url request to the url
-        var urlRequest = URLRequest(url: URL(string: "https://api.openweathermap.org/data/2.5/forecast?lat=0&lon=0&appid=fae7190d7e6433ec3a45285ffcf55c86&units=metric")!)
+        var urlRequest = URLRequest(url: URL(string: urlString)!)
 
         //Declaring the http method
         urlRequest.httpMethod = "GET"
